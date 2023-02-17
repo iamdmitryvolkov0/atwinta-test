@@ -22,7 +22,6 @@ Route::get('/', [PagesController::class, 'all'])->name('all');
 Route::get('/public', [PagesController::class, 'public'])->name('public');
 Route::get('/private', [PagesController::class, 'private'])->middleware('auth')->name('private');
 Route::get('/paste/{hash}', [PagesController::class, 'get'])->name('pastePage');
-Route::get('/paste/code/{hash}', [PagesController::class, 'getCode'])->name('pasteCodePage');
 Route::get('/create', [PastesFormsController::class, 'create'])->name('create');
 Route::get('/user_pastes', [PagesController::class, 'userPastes'])->middleware('auth')->name('userPastes');
 Route::get('/profile', [UserController::class, 'profile'])->middleware('auth')->name('profile');
